@@ -1,0 +1,9 @@
+# maintenance
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'
+
+# Enable tab completion for `g` and config by marking it as an alias for `git`
+if type __git_wrap__git_main &> /dev/null && [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+	complete -o default -o nospace -F __git_wrap__git_main g;
+	complete -o default -o nospace -F __git_wrap__git_main config;
+fi
+

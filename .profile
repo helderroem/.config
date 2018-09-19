@@ -17,6 +17,7 @@ fi
 # find all relevant dotfiles and load them
 files=$(find $folders -maxdepth 1 -type f -name ".*")
 for file in $files; do
+	echo $file
 	[ -r "$file" ] && [ -f "$file" ] && source "$HOME/.shells/$file";
 done;
 
